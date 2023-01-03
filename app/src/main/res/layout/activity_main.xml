@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+
+
+    <ImageView
+        android:id="@+id/spendee_image"
+        android:layout_width="246dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginTop="180dp"
+
+        android:layout_marginBottom="90dp"
+
+        android:src="@drawable/imgfirst" />
+
+    <TextView
+        android:id="@+id/spendee_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-30dp"
+        android:fontFamily="@font/lemondrop"
+        android:text="@string/spendee1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/spendee_text2"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/architects_daughter"
+        android:gravity="center_horizontal"
+        android:text="@string/manage"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+</LinearLayout>
