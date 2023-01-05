@@ -113,10 +113,11 @@
             android:layout_height="80dp"
             android:src="@drawable/second"
             app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-            app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
+            app:layout_constraintTop_toTopOf="@+id/rectangle_1"
+            app:layout_constraintVertical_bias="0.38" />
 
         <TextView
             android:id="@+id/income_set_result"
