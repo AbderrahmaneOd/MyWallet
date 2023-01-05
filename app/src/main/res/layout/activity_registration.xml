@@ -85,7 +85,7 @@
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/black"
-                app:backgroundTint="@color/purple_500" />
+                app:backgroundTint="@color/chromatic" />
 
             <TextView
                 android:id="@+id/signin_here"
