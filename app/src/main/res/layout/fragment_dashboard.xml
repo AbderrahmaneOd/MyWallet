@@ -20,15 +20,14 @@
 
         <View
             android:id="@+id/rectangle_1"
-            android:layout_width="184dp"
+            android:layout_width="160dp"
             android:layout_height="101dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
 
             android:background="@drawable/rectangle1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintEnd_toStartOf="@+id/rectangle_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.917" />
@@ -103,22 +102,21 @@
             android:src="@drawable/third"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.728"
+            app:layout_constraintHorizontal_bias="0.782"
             app:layout_constraintStart_toStartOf="@+id/rectangle_2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.864" />
+            app:layout_constraintVertical_bias="0.826" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="58dp"
             android:layout_height="80dp"
             android:src="@drawable/second"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.379"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.898" />
+            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_1" />
 
         <TextView
             android:id="@+id/income_set_result"
@@ -260,22 +258,6 @@
 
                     </androidx.recyclerview.widget.RecyclerView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Expense Statistics"
-                        android:textAppearance="?android:textAppearanceLarge"
-                        android:padding="10dp"></TextView>
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/bar_chart"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:padding="10dp"
-                        android:layout_marginBottom="20dp"/>
-
-
 
                 </LinearLayout>
             </ScrollView>
@@ -286,18 +268,18 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="160dp">
+
                 <TextView
+                    android:id="@+id/expense_ft_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Expense"
-                    android:id="@+id/expense_ft_text"
-                    android:padding="5dp"
-                    android:textColor="@color/black"
-                    android:background="#FFEAA00C"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
-                    android:visibility="invisible"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small">
+                    android:padding="5dp"
+                    android:text="Expense"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/black"
+                    android:visibility="invisible">
 
                 </TextView>
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -323,17 +305,16 @@
                 android:layout_marginBottom="90dp">
 
                 <TextView
+                    android:id="@+id/income_ft_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Income"
-                    android:id="@+id/income_ft_text"
-                    android:textColor="@color/black"
-                    android:padding="5dp"
-                    android:background="#FFEAA00C"
                     android:layout_gravity="center"
                     android:layout_marginRight="5dp"
-                    android:visibility="invisible"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small">
+                    android:padding="5dp"
+                    android:text="Income"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/black"
+                    android:visibility="invisible">
 
                 </TextView>
 

@@ -22,9 +22,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".searchdata2" />
-        <activity android:name=".searchdata" />
-        <activity android:name=".change_password" />
         <activity android:name=".Profile" />
         <activity
             android:name=".feedback"
@@ -32,7 +29,6 @@
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity android:name=".about" />
         <activity android:name=".first_home_page" />
-        <activity android:name=".resetpassword" />
         <activity android:name=".Registration" />
         <activity android:name=".home_screen" />
 

@@ -25,7 +25,8 @@
                 android:layout_width="552dp"
                 android:layout_height="287dp"
                 android:layout_marginTop="-10dp"
-                app:srcCompat="@color/chromatic" />
+                app:srcCompat="@color/chromatic"
+                android:contentDescription="TODO" />
 
             <ImageView
                 android:layout_width="225dp"
@@ -58,6 +59,32 @@
                 android:layout_margin="10dp"
                 android:background="@color/yellow"
                 android:text="Change Password"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/chromatic"
+                android:textColorHint="@android:color/black"
+                app:backgroundTint="@color/purple_500"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/btn_deleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/yellow"
+                android:text="Delete Account"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/chromatic"
+                android:textColorHint="@android:color/black"
+                app:backgroundTint="@color/purple_500"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/yellow"
+                android:text="Logout"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/chromatic"
                 android:textColorHint="@android:color/black"

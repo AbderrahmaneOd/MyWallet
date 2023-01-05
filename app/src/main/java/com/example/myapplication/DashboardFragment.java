@@ -28,19 +28,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Model.Data;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.BaseDataSet;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -57,9 +47,7 @@ import java.util.Date;
 
 public class DashboardFragment extends Fragment {
 
-    BarChart barChart;
-    BarData barData;
-    BarDataSet barDataSet;
+
     ArrayList barEntries;
     final String[] date=new String[10000000];
 
@@ -135,32 +123,7 @@ public class DashboardFragment extends Fragment {
         Rof=AnimationUtils.loadAnimation(getActivity(),R.anim.rotate_forward);
 
 
-        barChart=myview.findViewById(R.id.bar_chart);
-        ValueEventListener event2=new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                getBarEntries(snapshot);
-                barDataSet=new BarDataSet(barEntries,"Expenses");
-                barData=new BarData(barDataSet);
-                barChart.setData(barData);
-                barChart.getDescription().setText("Expenses Per Day");
-                XAxis xval=barChart.getXAxis();
-                xval.setDrawLabels(true);
-                xval.setValueFormatter(new IndexAxisValueFormatter(date));
-                barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-                barDataSet.setValueTextColor(Color.BLACK);
-                barDataSet.setValueTextSize(16f);
-                barDataSet.notifyDataSetChanged();
-                barChart.notifyDataSetChanged();
-                barChart.invalidate();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        };
-        mExpenseDatabase.addListenerForSingleValueEvent(event2);
 
 
         fab_main.setOnClickListener(new View.OnClickListener() {

@@ -37,9 +37,8 @@ import java.util.Date;
 public class Profile extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    Button logout;
 
-    Button changepass;
-    Button deleteaccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +62,27 @@ public class Profile extends AppCompatActivity {
         };
         mUserInfoDatabase.addListenerForSingleValueEvent(valueEventListener);
 
-        changepass=findViewById(R.id.btn_changepass);
-
-        changepass.setOnClickListener(new View.OnClickListener() {
+        logout = findViewById(R.id.btn_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Profile.this,change_password.class);
-                startActivity(intent);
+                AlertDialog.Builder builder=new AlertDialog.Builder(Profile.this);
+                builder.setTitle("Logout");
+                builder.setMessage("Do you really want to Logout?");
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finishAffinity();
+                        startActivity(new Intent(getApplicationContext(),home_screen.class));
+                    }
+                });
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
             }
         });
 

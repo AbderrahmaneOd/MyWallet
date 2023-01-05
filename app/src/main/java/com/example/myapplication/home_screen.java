@@ -33,7 +33,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class home_screen extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPass;
-    private CheckBox remember;
 
 private ProgressDialog mDialog;
 
@@ -53,43 +52,8 @@ private FirebaseAuth mAuth;
         mEmail = findViewById(R.id.email_login);
         mPass = findViewById(R.id.password_login);
         Button btnLogin = findViewById(R.id.btn_login);
-        TextView mforget_password = findViewById(R.id.forgot_password);
         TextView mSignUpHere = findViewById(R.id.signup_reg);
-        remember=findViewById(R.id.checkBox2);
 
-        SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-        String checkbox=preferences.getString("remember","");
-        if(checkbox.equals("true"))
-        {
-            Intent intent=new Intent(home_screen.this,first_home_page.class);
-            startActivity(intent);
-        }
-        else if(!checkbox.equals("false"))
-        {
-
-        }
-
-        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(buttonView.isChecked())
-                {
-                    SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-                    SharedPreferences.Editor editor=preferences.edit();
-                    editor.putString("remember","true");
-                    editor.apply();
-                    Toast.makeText(home_screen.this,"Remember me Checked..",Toast.LENGTH_SHORT).show();
-                }
-                else if(!buttonView.isChecked())
-                {
-                    SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
-                    SharedPreferences.Editor editor=preferences.edit();
-                    editor.putString("remember","false");
-                    editor.apply();
-                    Toast.makeText(home_screen.this,"Remember me Unchecked..",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         mSignUpHere.setOnClickListener(new View.OnClickListener() {
             @Override

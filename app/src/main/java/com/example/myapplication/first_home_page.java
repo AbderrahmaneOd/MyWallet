@@ -40,7 +40,6 @@ import java.util.List;
 
 public class first_home_page extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
 
     private DashboardFragment dashboardFragment;
@@ -64,7 +63,6 @@ public class first_home_page extends AppCompatActivity implements NavigationView
 
         //setSupportActionBar(toolbar);
 
-        bottomNavigationView=findViewById(R.id.bottomNavigationbar);
         frameLayout=findViewById(R.id.main_frame);
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(
@@ -99,33 +97,6 @@ public class first_home_page extends AppCompatActivity implements NavigationView
         };
         mUserInfoDatabase.addListenerForSingleValueEvent(valueEventListener);
 
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.dashboard:
-                        setFragment(dashboardFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.dashboard_color);
-                        return true;
-
-                    case R.id.income:
-                        setFragment(incomeFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.income_color);
-                        return true;
-
-                    case R.id.expense:
-                        setFragment(expenseFragment);
-                        bottomNavigationView.setItemBackgroundResource(R.color.expense_color);
-                        return true;
-
-                    default:
-                        return false;
-
-                }
-
-            }
-        });
 
         items =new  ArrayList<HashMap<String,Object>>();
         pm = getPackageManager();
