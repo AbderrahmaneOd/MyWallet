@@ -47,8 +47,6 @@ import java.util.Date;
 
 public class DashboardFragment extends Fragment {
 
-
-    ArrayList barEntries;
     final String[] date=new String[10000000];
 
     private FloatingActionButton fab_main;
@@ -536,31 +534,4 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private void getBarEntries(DataSnapshot snap)
-    {
-
-        Log.d("ExpenseData","Reading Data");
-
-        barEntries=new ArrayList();
-
-        float a=1f;
-        int a1=1;
-        if(snap.exists()) {
-            for (DataSnapshot ds : snap.getChildren()) {
-                Data data = ds.getValue(Data.class);
-                //String date = data.getDate();
-                date[a1]=data.getDate().substring(0,7);
-
-                float amm = data.getAmount();
-                //String name=ds.child(data.getId()).child("type").getValue(String.class);
-
-                //Data data=ds.getValue(Data.class);
-                //String name=data.getType();
-                barEntries.add(new BarEntry(a,amm));
-
-                a=a+1;
-                a1=a1+1;
-            }
-        }
-    }
 }
